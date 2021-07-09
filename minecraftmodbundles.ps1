@@ -1,3 +1,10 @@
+$cmdName = "7z"
+if (!(Get-Command $cmdName -errorAction SilentlyContinue))
+{
+    Write-Warning "$cmdName is not installed or not added to PATH variable!"
+    exit
+}
+
 $currentpath=(Get-Location)
 Set-Location "$($env:appdata)/.minecraft/mods"
 
